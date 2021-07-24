@@ -2,6 +2,7 @@ const apiKey = 'AIzaSyBdqTxMfUdYwnrrMNIBAeVXt85ckeMgHiI';
 const playlistDasar = 'PLFIM0718LjIWXagluzROrA-iBY9eeUt4w';
 const playlistDom = 'PLFIM0718LjIWB3YRoQbQh82ZewAGtE2-3';
 const playlistLanjutan = 'PLFIM0718LjIUGpY8wmE41W7rTJo_3Y46-';
+const playlistNode = 'PLFIM0718LjIW-XBdVOerYgKegBtD6rSfD';
 
 const getVideosTitle = async (x,y) => {
   let hasil = []
@@ -64,6 +65,29 @@ const getVideosId3 = async (x,y) => {
   let hasil = []
   for (let i = (x - 1); i < y; i++) {
     hasil.push(await fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=${playlistLanjutan}&key=${apiKey}`)
+              .then(res => res.json())
+              .then(res => res.items)
+              .then(res => res[i])
+              .then(res => res.snippet.resourceId.videoId))
+  }
+  return hasil;
+};
+
+const getVideosTitle4 = async (x,y) => {
+  let hasil = []
+  for (let j = (x - 1); j < y; j++) {
+    hasil.push(await fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=${playlistNode}&key=${apiKey}`)
+              .then(res => res.json())
+              .then(res => res.items)
+              .then(res => res[j])
+              .then(res => res.snippet.title))
+  }
+  return hasil;
+};
+const getVideosId4 = async (x,y) => {
+  let hasil = []
+  for (let i = (x - 1); i < y; i++) {
+    hasil.push(await fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=${playlistNode}&key=${apiKey}`)
               .then(res => res.json())
               .then(res => res.items)
               .then(res => res[i])
@@ -301,11 +325,64 @@ const main = async () => {
   
   // hari ke-16
   $(`.btnHari16`).on('click', async () => {
-    title = await getVideosTitle3(5,8);
+    title = await getVideosTitle3(9,12);
     console.log(title);
-    id = await getVideosId3(5,8);
+    id = await getVideosId3(9,12);
     console.log(id);
     cetakArray(title, id, 16);
+  })
+  
+  // hari ke-17
+  $(`.btnHari17`).on('click', async () => {
+    title = await getVideosTitle3(13,16);
+    console.log(title);
+    id = await getVideosId3(13,16);
+    console.log(id);
+    cetakArray(title, id, 17);
+  })
+  
+  // hari ke-18
+  $(`.btnHari18`).on('click', async () => {
+    title = await getVideosTitle3(17,20);
+    console.log(title);
+    id = await getVideosId3(17,20);
+    console.log(id);
+    cetakArray(title, id, 18);
+  })
+  
+  // hari ke-19
+  $(`.btnHari19`).on('click', async () => {
+    title = await getVideosTitle3(21,22);
+    console.log(title);
+    id = await getVideosId3(21,22);
+    console.log(id);
+    cetakArray(title, id, 19);
+  })
+  
+  // hari ke-20
+  $(`.btnHari20`).on('click', async () => {
+    title = await getVideosTitle3(23,25);
+    console.log(title);
+    id = await getVideosId3(23,25);
+    console.log(id);
+    cetakArray(title, id, 20);
+  })
+  
+  // hari ke-21
+  $(`.btnHari21`).on('click', async () => {
+    title = await getVideosTitle3(26,27);
+    console.log(title);
+    id = await getVideosId3(26,27);
+    console.log(id);
+    
+    title2 = await getVideosTitle4(1,2);
+    console.log(title2);
+    id2 = await getVideosId4(1,2);
+    console.log(id);
+    
+    title = title.concat(title2)
+    id = id.concat(id2)
+    cetakArray(title, id, 21);
   })
   
   
