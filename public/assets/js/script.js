@@ -385,7 +385,86 @@ const main = async () => {
     cetakArray(title, id, 21);
   })
   
+  // hari ke-22
+  $(`.btnHari22`).on('click', async () => {
+    title = await getVideosTitle4(3,6);
+    console.log(title);
+    id = await getVideosId4(3,6);
+    console.log(id);
+    cetakArray(title, id, 22);
+  })
   
+  // hari ke-23
+  $(`.btnHari23`).on('click', async () => {
+    title = await getVideosTitle4(7,9);
+    console.log(title);
+    id = await getVideosId4(7,9);
+    console.log(id);
+    cetakArray(title, id, 23);
+  })
+  
+  // hari ke-24
+  $(`.btnHari24`).on('click', async () => {
+    title = await getVideosTitle4(10,11);
+    console.log(title);
+    id = await getVideosId4(10,11);
+    console.log(id);
+    cetakArray(title, id, 24);
+  })
+  
+  // hari ke-25
+  $(`.btnHari25`).on('click', async () => {
+    title = await getVideosTitle4(12,13);
+    console.log(title);
+    id = await getVideosId4(12,13);
+    console.log(id);
+    cetakArray(title, id, 25);
+  })
+  
+  // hari ke-26
+  $(`.btnHari26`).on('click', async () => {
+    title = await getVideosTitle4(14,15);
+    console.log(title);
+    id = await getVideosId4(14,15);
+    console.log(id);
+    cetakArray(title, id, 26);
+  })
+  
+  // hari ke-27
+  $(`.btnHari27`).on('click', async () => {
+    title = await getVideosTitle4(16,17);
+    console.log(title);
+    id = await getVideosId4(16,17);
+    console.log(id);
+    cetakArray(title, id, 27);
+  })
+  
+  // hari ke-28
+  $(`.btnHari28`).on('click', async () => {
+    title = await getVideosTitle4(18,19);
+    console.log(title);
+    id = await getVideosId4(18,19);
+    console.log(id);
+    cetakArray(title, id, 28);
+  })
+  
+  // hari ke-29
+  $(`.btnHari29`).on('click', async () => {
+    title = await getVideosTitle4(20,22);
+    console.log(title);
+    id = await getVideosId4(20,22);
+    console.log(id);
+    cetakArray(title, id, 29);
+  })
+  
+  // hari ke-30
+  $(`.btnHari30`).on('click', async () => {
+    title = await getVideosTitle4(23,24);
+    console.log(title);
+    id = await getVideosId4(23,24);
+    console.log(id);
+    cetakArray(title, id, 30);
+  })
   
 };
 main();
