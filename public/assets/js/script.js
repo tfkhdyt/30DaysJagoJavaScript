@@ -153,6 +153,7 @@ const buatWeek = () => {
 const cetakArray = (title, id, x) => {
   let isiHari = '';
   for (let i = 0; i < title.length; i++) {
+    const linkVideo = encodeURIComponent(`https://youtu.be/${id[i]}`)
     isiHari += `
       <div class='my-3'>
         <div class=row>
@@ -162,8 +163,9 @@ const cetakArray = (title, id, x) => {
         </div>
         <div class='row mt-1'>
           <div class=col-12>
-            <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal" data-title="${title[i]}" data-id='${id[i]}'>Tonton di sini</button>
-            <a class='btn btn-danger btn-sm' target='_blank' href='https://youtu.be/${id[i]}'>Tonton di <i class="fab fa-youtube"></i></a>
+            <button type="button" class="btn btn-primary btn-sm m-1" data-bs-toggle="modal" data-bs-target="#exampleModal" data-title="${title[i]}" data-id='${id[i]}'>Tonton di sini</button>
+            <a class='btn btn-danger btn-sm m-1' target='_blank' href='https://youtu.be/${id[i]}'>Tonton di <i class="fab fa-youtube"></i></a>
+            <a class='btn btn-success btn-sm m-1' target='_blank' href='https://yt1s.com/en?q=${linkVideo}'><i class="fas fa-download"></i> Unduh</a>
           </div>
         </div>
       </div>
