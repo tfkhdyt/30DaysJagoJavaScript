@@ -27,14 +27,14 @@
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <div class="container">
+  <div class="container mx-auto">
     <div class="row">
-      <div class="col-12 col-md-8 my-2 text-center">
+      <div class="col-12 col-md-6 my-2 text-center">
         <h3>30 Hari Jago JavaScript</h3>
       </div>
     </div>
     <div class="row">
-      <div class="col-12 col-md-8 my-1">
+      <div class="col-12 col-md-6 my-1">
 
         <div class="accordion" id="bulan">
 
@@ -114,13 +114,16 @@
       // Extract info from data-bs-* attributes
       // const title = button.getAttribute('data-title')
       const id = button.getAttribute('data-id')
-      const isiModal = `
-      <div style="overflow: hidden;">
-        <iframe src="https://yt1s.com/en?q=${id}" style="margin-top: -300px; height: 750px; width: 100%;" frameborder="0">
-        </iframe>
-      </div>
+      let isiModal = '';
+      if (window.innerWidth <= 360) {
+        isiModal = `
+          <div style="overflow: hidden;">
+            <iframe src="https://yt1s.com/en?q=${id}" style="margin-top: -300px; height: 750px; width: 100%;" frameborder="0">
+            </iframe>
+          </div>
+        `
+      }
 
-      `
       // If necessary, you could initiate an AJAX request here
       // and then do the updating in a callback.
       //
@@ -129,7 +132,7 @@
       const modalBodyInput = modalDownload.querySelector('.modalDownload')
 
       modalBodyInput.innerHTML = isiModal
-      
+
     })
   </script>
   <!--<script src="//cdn.jsdelivr.net/npm/eruda"></script>-->
