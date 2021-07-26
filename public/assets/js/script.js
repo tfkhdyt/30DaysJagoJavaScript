@@ -165,7 +165,7 @@ const cetakArray = (title, id, x) => {
           <div class=col-12>
             <button type="button" class="btn btn-primary btn-sm m-1" data-bs-toggle="modal" data-bs-target="#exampleModal" data-title="${title[i]}" data-id='${id[i]}'>Tonton di sini</button>
             <a class='btn btn-danger btn-sm m-1' target='_blank' href='https://youtu.be/${id[i]}'>Tonton di <i class="fab fa-youtube"></i></a>
-            <a class='btn btn-success btn-sm m-1' target='_blank' href='https://yt1s.com/en?q=${linkVideo}'><i class="fas fa-download"></i> Unduh</a>
+            <button type="button" class="btn btn-success btn-sm m-1" data-bs-toggle="modal" data-bs-target="#modalDownload" data-id='${linkVideo}'><i class="fas fa-download"></i> Unduh</button>
           </div>
         </div>
       </div>
