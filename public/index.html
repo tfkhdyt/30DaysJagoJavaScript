@@ -115,15 +115,12 @@
       // const title = button.getAttribute('data-title')
       const id = button.getAttribute('data-id')
       let isiModal = '';
-      if (window.innerWidth <= 360) {
-        isiModal = `
-          <div style="overflow: hidden;">
-            <iframe src="https://yt1s.com/en?q=${id}" style="margin-top: -300px; height: 750px; width: 100%;" frameborder="0">
-            </iframe>
-          </div>
-        `
-      }
-
+      isiModal = `
+        <div style="overflow: hidden;">
+          <iframe scrolling='no' src="https://yt1s.com/en?q=${id}" style="margin-top: -300px; height: 750px; width: 100%;" frameborder="0">
+          </iframe>
+        </div>
+      `
       // If necessary, you could initiate an AJAX request here
       // and then do the updating in a callback.
       //
